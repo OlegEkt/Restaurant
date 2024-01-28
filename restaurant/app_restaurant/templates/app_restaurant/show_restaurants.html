@@ -1,0 +1,14 @@
+{% extends 'app_restaurant/base.html' %}
+
+{% block restaurant %}
+
+{% block content %}
+  <h2>Рестораны города</h2>
+  <ul>
+    {% for restaurant in restaurants %}
+      <li>{{ restaurant.name }} - {{ restaurant.specialization }} - {{ restaurant.address }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% endblock %}
