@@ -2,13 +2,19 @@
 
 {% block restaurant %}
 
-{% block content %}
-  <h2>Рестораны города</h2>
-  <ul>
-    {% for restaurant in restaurants %}
-      <li>{{ restaurant.name }} - {{ restaurant.specialization }} - {{ restaurant.address }}</li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+ {% block content %}
+      <h2>Restaurants of our city</h2>
+        <form method="GET" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Search</button>
+          </form>
+          <ul>
+            {% for restaurant in restaurants %}
+              <li>{{restaurant.name}}</li>
+              <li>{{restaurant.specialization}}</li>
+            {% endfor %}
+          </ul>
+ {% endblock %}
 
 {% endblock %}

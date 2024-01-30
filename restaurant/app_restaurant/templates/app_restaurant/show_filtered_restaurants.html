@@ -1,0 +1,23 @@
+{% extends 'app_restaurant/base.html' %}
+{% block restaurant %}
+
+  {% block content %}
+
+      <h2>Restaurants of our city(Results)</h2>
+
+      <ul>
+        {% for restaurant in restaurants %}
+          <li>{{restaurant.name}}</li>
+          <li>{{restaurant.specialization}}</li>
+          <li>{{restaurant.address}}</li>
+          <li>{{restaurant.website}}</li>
+          <li>{{restaurant.phone}}</li>
+
+        {% endfor %}
+      </ul>
+
+      <a href="{% url 'show_restaurants' %}">To list of all restaurants</a>
+
+  {% endblock %}
+
+{% endblock %}
